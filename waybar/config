@@ -1,0 +1,99 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    //"width": 1920,
+    "spacing": 4,
+    
+    "modules-left": ["hyprland/workspaces"],  
+    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "backlight", "battery", "clock","tray"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "disable-scroll": false,
+        "all-outputs": true,
+        "warp-on-scroll": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+        },
+        "format-icons": {
+            "1": "१",
+            "2": "२",
+            "3": "३",
+            "4": "४",
+            "5": "५",
+            "6": "६",
+            "7": "७",
+            "8": "८",
+            "9": "९",
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% ",
+    },
+    "backlight": {
+        "scroll-step": 5,
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{capacity}% 󰁹",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄",
+        "format-full": "",
+        "format-icons": ["󰂎", "󰁻", "󰁾", "󰂀", "󰂂"]
+    },
+    "clock": {
+        "timezone": "Asia/Kolkata",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%m-%d}"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 6
+    }
+
+}
+

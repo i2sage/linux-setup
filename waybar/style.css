@@ -1,0 +1,135 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 14px;
+}
+
+@define-color base #4a4a4a;
+@define-color base2 #787586;
+@define-color white #ffffff;
+@define-color black #000000;
+@define-color warn #e64553;
+@define-color caution #e5c890;
+@define-color good #a6d189;
+@define-color active #89dceb;
+@define-color hover #b4befe;
+@define-color acc #89dceb;
+
+window#waybar {
+    background-color: transparent;
+    color: @white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    background-color: @base2;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: inherit;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @white;
+    margin: 2px;
+}
+
+#workspaces button:hover {
+    background: @base;
+}
+
+#workspaces button.active {
+    background-color: @base;
+}
+
+#workspaces button.urgent {
+    background-color: @warn;
+}
+
+#network,
+#bluetooth,
+#keyboard-state,
+#clock,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#wireplumber,
+#tray,
+#idle_inhibitor {
+    background-color: @base2;
+    padding: 0 10px;
+    color: @white;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#battery.charging, #battery.plugged {
+    color: @good;
+}
+
+@keyframes blink {
+    to {
+        background-color: @white;
+        color: @black;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @warn;
+    color: @white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:active {
+    background-color: @black;
+}
+
+#wireplumber.muted,
+#pulseaudio.muted {
+    color: @acc;
+}
+
+#tray {
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @warn;
+}
+
+#idle_inhibitor {
+    color: @white;
+}
+
+#idle_inhibitor.activated {
+    color: @active;
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	color: transparent;
+}
